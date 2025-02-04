@@ -540,11 +540,16 @@ class CIFParser:
         
         # parse from HETATM
         atom_site = data.getObj('atom_site')
+        comp_id_key = "auth_comp_id"
+        if not atom_site.hasAttribute(comp_id_key):
+            comp_id_key = "label_comp_id"  # alternative column label for residue name if `auth_comp_id` is missing
+        assert atom_site.hasAttribute(comp_id_key), "Input CIF structure is missing a key for `comp_id`"
+
         nonpoly_res = [(r[atom_site.getIndex('label_asym_id')],
                         r[atom_site.getIndex('label_entity_id')],
                         r[atom_site.getIndex('auth_asym_id')],
                         r[atom_site.getIndex('auth_seq_id')], # !!! this is not necessarily an integer number, per mmcif specifications !!!
-                        r[atom_site.getIndex('auth_comp_id')]) 
+                        r[atom_site.getIndex(comp_id_key)]) 
                        for r in atom_site.getRowList() 
                        if r[atom_site.getIndex('group_PDB')]=='HETATM' and r[atom_site.getIndex('label_asym_id')] not in chains.keys()]
         nonpoly_res = [r for r in nonpoly_res if r[0] not in chains.keys()]
