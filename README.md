@@ -1,7 +1,8 @@
 # PLACER
 #### <ins>P</ins>rotein-<ins>L</ins>igand <ins>A</ins>tomistic <ins>C</ins>onformational <ins>E</ins>nsemble <ins>R</ins>esolver
 
-![image](https://github.com/user-attachments/assets/78fd0210-89f4-430c-9cab-4367125f84fb)
+![image](https://github.com/user-attachments/assets/78d7fc0e-ab45-4879-abf5-1145a948a7fb)
+
 
 (formerly known as ChemNet)
 
