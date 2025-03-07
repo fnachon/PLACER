@@ -108,7 +108,7 @@ Available arguments:
                         JSON format: {name3: {'sdf': <contents of SDF file as string>,
                                               'atom_id': [atom names],
                                               'leaving': [True/False for whether this atom is deleted when part of polymer],
-                                              'pdbx_align': []}} (default: None)
+                                              'pdbx_align': [int,...]}} (default: None)
   --ligand_file LIGAND_FILE [LIGAND_FILE ...]
                         SDF or MOL2 file of the ligand(s). (Input format: XXX:ligand1.sdf YYY:ligand2.mol2) ZZZ:CCD
                         Used for refining the atom typing and connectivity in the ligand structures. Coordinates are still parsed form the input PDB/mmCIF.
@@ -220,7 +220,7 @@ Some more common questions and problems related to running PLACER:
        {'sdf': <contents of SDF file as string>,   # SDF file with correct bonding and chirality info, as a single string
         'atom_id': [atom names],  # atom names as they appear on the PDB file, in the same order as atoms in the SDF
         'leaving': [True/False for whether this atom is deleted when part of polymer],  # True for backbone atoms that get deleted, such as backbone amide NH and backbone carboxylate OXT
-        'pdbx_align': []   # list with a length of number of atoms, can remain empty. Does not have a meaning for PLACER as it was used by the mmCIF writer.
+        'pdbx_align': [int,...]   # list with a length of number of atoms. Can just be zeroes. The exact values no not affect PLACER as it was used by the mmCIF writer.
        }}
 ```
 
