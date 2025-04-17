@@ -4,3 +4,4 @@
 /modules/__pycache__
 /modules/pdbx/__pycache__
 /modules/pdbx/reader/__pycache__
+*.pyc
